@@ -17,56 +17,56 @@ void Sortmenu();
 int BookAllNum = 0;
 BookData DataBase[100];
 
-void mainmenu()                           //Ö÷²Ëµ¥½çÃæÉè¼Æ
+void mainmenu()                           //ä¸»èœå•ç•Œé¢è®¾è®¡
 {
     cout << "----------------------------\n";
-    cout << "\tÍ¼Êé¹ÜÀíÏµÍ³\n";
-    cout << "\t  Ö÷²Ëµ¥\n";
-    cout << "   1.ÊÕÒøÄ£¿é\n";
-    cout << "   2.Êé¿â¹ÜÀíÄ£¿é\n";
-    cout << "   3.±¨±íÄ£¿é\n";
-    cout << "   4.ÍË³öÏµÍ³\n\n";
-    cout << "   ÊäÈëÑ¡Ôñ:\n";
-    cout << "   ÇëÊäÈë1~4Ö®¼äµÄÊı¡£\n";
+    cout << "\tå›¾ä¹¦ç®¡ç†ç³»ç»Ÿ\n";
+    cout << "\t  ä¸»èœå•\n";
+    cout << "   1.æ”¶é“¶æ¨¡å—\n";
+    cout << "   2.ä¹¦åº“ç®¡ç†æ¨¡å—\n";
+    cout << "   3.æŠ¥è¡¨æ¨¡å—\n";
+    cout << "   4.é€€å‡ºç³»ç»Ÿ\n\n";
+    cout << "   è¾“å…¥é€‰æ‹©:\n";
+    cout << "   è¯·è¾“å…¥1~4ä¹‹é—´çš„æ•°ã€‚\n";
     cout << "----------------------------\n";
 }
 
 
 void mainKeyDown() {
     int userKey = 0;
-    cin >> userKey;                       //ÓÃ»§ÊäÈëĞÅÏ¢
-    switch (userKey)                      //ÊäÈëÊı×Ö£¬ÅĞ¶Ï²Ù×÷
+    cin >> userKey;                       //ç”¨æˆ·è¾“å…¥ä¿¡æ¯
+    switch (userKey)                      //è¾“å…¥æ•°å­—ï¼Œåˆ¤æ–­æ“ä½œ
     {
-        case 1://ÊÕÒøÄ£¿é
-            system("cls");//Çå¿Õ½çÃæ
-            cashier_menu();//½øÈëµ½ÊÕÒøÄ£¿é
+        case 1://æ”¶é“¶æ¨¡å—
+            system("cls");//æ¸…ç©ºç•Œé¢
+            cashier_menu();//è¿›å…¥åˆ°æ”¶é“¶æ¨¡å—
             return;
-        case 2://Í¼Êé²Ù×÷Ä£¿é
+        case 2://å›¾ä¹¦æ“ä½œæ¨¡å—
             system("cls");
-            bookstore_menu();//½øÈëµ½Í¼Êé²Ù×÷Ä£¿é
+            bookstore_menu();//è¿›å…¥åˆ°å›¾ä¹¦æ“ä½œæ¨¡å—
             return;
-        case 3://±¨±íÄ£¿é
+        case 3://æŠ¥è¡¨æ¨¡å—
             system("cls");
-            report_menu();//½øÈëµ½±¨±íÄ£¿é
+            report_menu();//è¿›å…¥åˆ°æŠ¥è¡¨æ¨¡å—
             return;
         case 4:
-            cout << "ÍË³öÏµÍ³\n";
-            cout << "ÍË³öÏµÍ³³É¹¦£¡\n";
-            system("pause");     //ÏÔÊ¾ĞÅÏ¢
-            exit(0);                 //ÍË³öÏµÍ³£¬·µ»ØÖµÎª0
-        default://´¦ÀíÓÃ»§Ï¹ÊäÈëµÄÇé¿ö
-            cout << "ÊäÈëÊı×ÖÎŞĞ§,ÇëÖØĞÂÊäÈë!\n";
-            mainKeyDown();              //ÔÙ´ÎÊäÈë
+            cout << "é€€å‡ºç³»ç»Ÿ\n";
+            cout << "é€€å‡ºç³»ç»ŸæˆåŠŸï¼\n";
+            system("pause");     //æ˜¾ç¤ºä¿¡æ¯
+            exit(0);                 //é€€å‡ºç³»ç»Ÿï¼Œè¿”å›å€¼ä¸º0
+        default://å¤„ç†ç”¨æˆ·çè¾“å…¥çš„æƒ…å†µ
+            cout << "è¾“å…¥æ•°å­—æ— æ•ˆ,è¯·é‡æ–°è¾“å…¥!\n";
+            mainKeyDown();              //å†æ¬¡è¾“å…¥
     }
 }
 
-void bookstoreSeachBook() //Í¼Êé¹ÜÀíÄ£¿éµÄÕÒÑ°Í¼Êé
+void bookstoreSeachBook() //å›¾ä¹¦ç®¡ç†æ¨¡å—çš„æ‰¾å¯»å›¾ä¹¦
 {
-    cout << "ÇëÊäÈëÒª²éÕÒµÄÊéÃû£º\n";
+    cout << "è¯·è¾“å…¥è¦æŸ¥æ‰¾çš„ä¹¦åï¼š\n";
     int tempIndex = lookUpBook();
-    if (tempIndex == -1) //´¦ÀíÃ»ÕÒµ½µÄÇé¿ö
+    if (tempIndex == -1) //å¤„ç†æ²¡æ‰¾åˆ°çš„æƒ…å†µ
     {
-        cout << "ERROR!Î´ÕÒµ½Äú²éÕÒµÄÊé¼®£¡\nÄú»¹Òª¼ÌĞø²éÕÒÂğ£¿[y/n]\n";
+        cout << "ERROR!æœªæ‰¾åˆ°æ‚¨æŸ¥æ‰¾çš„ä¹¦ç±ï¼\næ‚¨è¿˜è¦ç»§ç»­æŸ¥æ‰¾å—ï¼Ÿ[y/n]\n";
         char tempJudge;
         cin >> tempJudge;
         if (tempJudge == 'y') {
@@ -74,183 +74,183 @@ void bookstoreSeachBook() //Í¼Êé¹ÜÀíÄ£¿éµÄÕÒÑ°Í¼Êé
         } else {
             return;
         }
-    } else //Êä³öÊé¼®ÄÚÈİ£¨-------ºóĞø¼ÇµÃ¼Ó¶à¸öÖØÃûµÄÊé¼®µÄÇé¿ö--£©
+    } else //è¾“å‡ºä¹¦ç±å†…å®¹ï¼ˆ-------åç»­è®°å¾—åŠ å¤šä¸ªé‡åçš„ä¹¦ç±çš„æƒ…å†µ--ï¼‰
     {
         system("cls");
-        cout << "\tÍ¼Êé¹ÜÀíÏµÍ³\n";
-        cout << "ISBNºÅ£º" << DataBase[tempIndex].BookISBN << endl;
-        cout << "ÊéÃû£º" << DataBase[tempIndex].BookTitle << endl;
-        cout << "×÷Õß£º" << DataBase[tempIndex].BookAuther << endl;
-        cout << "³ö°æÉç£º" << DataBase[tempIndex].BookPub << endl;
-        cout << "Ê£ÓàÊıÁ¿£º" << DataBase[tempIndex].BookNum << endl;
-        cout << "µ¥¼Û£º" << DataBase[tempIndex].qtyOnHand << endl;
-        cout << "Åú·¢¼Û£º" << DataBase[tempIndex].BookWholesale << endl;
+        cout << "\tå›¾ä¹¦ç®¡ç†ç³»ç»Ÿ\n";
+        cout << "ISBNå·ï¼š" << DataBase[tempIndex].BookISBN << endl;
+        cout << "ä¹¦åï¼š" << DataBase[tempIndex].BookTitle << endl;
+        cout << "ä½œè€…ï¼š" << DataBase[tempIndex].BookAuther << endl;
+        cout << "å‡ºç‰ˆç¤¾ï¼š" << DataBase[tempIndex].BookPub << endl;
+        cout << "å‰©ä½™æ•°é‡ï¼š" << DataBase[tempIndex].BookNum << endl;
+        cout << "å•ä»·ï¼š" << DataBase[tempIndex].qtyOnHand << endl;
+        cout << "æ‰¹å‘ä»·ï¼š" << DataBase[tempIndex].BookWholesale << endl;
     }
 }
 
-int cashierPrint(int tempNum) //¶ÔÓÚ¶à¸öÊı¾İ´¢´æÓÚ´òÓ¡
+int cashierPrint(int tempNum) //å¯¹äºå¤šä¸ªæ•°æ®å‚¨å­˜äºæ‰“å°
 {
     system("cls");
-    cout << "ÇëÊäÈëÑ¡¹ºÊé¼®µÄISBNºÅ£º\n";
-    int tempBookISBN;//ÕÒÊé
-    int tempnum = 0;//¼ÇÂ¼ÕÒµ½ÊéµÄ·µ»ØÎ»ÖÃ£¨-1ÎªÃ»ÕÒµ½£©
+    cout << "è¯·è¾“å…¥é€‰è´­ä¹¦ç±çš„ISBNå·ï¼š\n";
+    int tempBookISBN;//æ‰¾ä¹¦
+    int tempnum = 0;//è®°å½•æ‰¾åˆ°ä¹¦çš„è¿”å›ä½ç½®ï¼ˆ-1ä¸ºæ²¡æ‰¾åˆ°ï¼‰
     cin >> tempBookISBN;
     tempnum = lookUpBookByISBN(tempBookISBN);
-    if (tempnum == -1) //Ã»ÕÒµ½
+    if (tempnum == -1) //æ²¡æ‰¾åˆ°
     {
-        cout << "ÄúÊäÈëÁËÎŞĞ§ISBNÂë£¡ÇëÔÙ´ÎÊäÈë£¡\n";
+        cout << "æ‚¨è¾“å…¥äº†æ— æ•ˆISBNç ï¼è¯·å†æ¬¡è¾“å…¥ï¼\n";
         system("pause");
-        return cashierPrint(tempNum);//ÔÙ´Î½øĞĞÊäÈë
-    } else //ÕÒµ½ÁË
+        return cashierPrint(tempNum);//å†æ¬¡è¿›è¡Œè¾“å…¥
+    } else //æ‰¾åˆ°äº†
     {
-        cout << "ÇëÊäÈëÒª¹ºÂòµÄÊıÁ¿£º";
+        cout << "è¯·è¾“å…¥è¦è´­ä¹°çš„æ•°é‡ï¼š";
         int BookBuyNum = 0;
         cin >> BookBuyNum;
         cout << "\n";
-        if (BookBuyNum > DataBase[tempnum].BookNum) //³¬³öÁË×î¶àµÄÊé
+        if (BookBuyNum > DataBase[tempnum].BookNum) //è¶…å‡ºäº†æœ€å¤šçš„ä¹¦
         {
-            cout << "Ã»ÓĞÕâÃ´¶àÊé£¡\n";
+            cout << "æ²¡æœ‰è¿™ä¹ˆå¤šä¹¦ï¼\n";
             system("pause");
-            return cashierPrint(tempNum);//ÔÙµü´ú
+            return cashierPrint(tempNum);//å†è¿­ä»£
         } else {
-            DataBase[tempnum].BookBuyNum = BookBuyNum;//¸üĞÂÊı¾İ
+            DataBase[tempnum].BookBuyNum = BookBuyNum;//æ›´æ–°æ•°æ®
             return tempnum;
         }
     }
 }
 
-bool cashierdecide() //´ËÄ£¿éÓÉÓÚÖØ¸´Ñ¯ÎÊÊÇ·ñ»¹ÂòÊé
+bool cashierdecide() //æ­¤æ¨¡å—ç”±äºé‡å¤è¯¢é—®æ˜¯å¦è¿˜ä¹°ä¹¦
 {
-    cout << "\nÄú»¹Òª¼ÌĞø²É¹ºÂğ£¿[y/n] ";
-    char temp_decide;//×Ö·û´®´¢´æÊäÈëµÄYÓëN
+    cout << "\næ‚¨è¿˜è¦ç»§ç»­é‡‡è´­å—ï¼Ÿ[y/n] ";
+    char temp_decide;//å­—ç¬¦ä¸²å‚¨å­˜è¾“å…¥çš„Yä¸N
     cin >> temp_decide;
-    if (temp_decide == 'y') //»¹ÂòÊé
+    if (temp_decide == 'y') //è¿˜ä¹°ä¹¦
     {
         return false;
-    } else if (temp_decide == 'n') //²»ÂòÁË
+    } else if (temp_decide == 'n') //ä¸ä¹°äº†
     {
         return true;
-    } else //´¦ÀíÏ¹ÊäµÄÇé¿ö
+    } else //å¤„ç†çè¾“çš„æƒ…å†µ
     {
-        cout << "ÇëÊäÈëy£¨yes£©»òÕßn£¨no£©\n";
-        return cashierdecide();//ÔÙ¸øÎÒÊä
+        cout << "è¯·è¾“å…¥yï¼ˆyesï¼‰æˆ–è€…nï¼ˆnoï¼‰\n";
+        return cashierdecide();//å†ç»™æˆ‘è¾“
     }
 }
 
-void cashier_menu() //Êä³ö²Ëµ¥
+void cashier_menu() //è¾“å‡ºèœå•
 {
-    double priceSumPrice = 0;//×Ü¼ÆµÄÊéµÄ¼Û¸ñ
-    int tempIndex[100];//´¢´æÂòÁË¶àÉÙÊé
+    double priceSumPrice = 0;//æ€»è®¡çš„ä¹¦çš„ä»·æ ¼
+    int tempIndex[100];//å‚¨å­˜ä¹°äº†å¤šå°‘ä¹¦
     int tempNum = 0;
-    while (true) //ÊäÈç¶à¸ö¹ºÊéĞÅÏ¢
+    while (true) //è¾“å¦‚å¤šä¸ªè´­ä¹¦ä¿¡æ¯
     {
         tempIndex[tempNum] = cashierPrint(tempNum);
         tempNum++;
-        if (cashierdecide()) //²»¹»ÂòÁË£¨ÓÉÓÚÊÇBreak£¬ËùÒÔÉÏÃætrueÓëfalseÏà·´£©
+        if (cashierdecide()) //ä¸å¤Ÿä¹°äº†ï¼ˆç”±äºæ˜¯Breakï¼Œæ‰€ä»¥ä¸Šé¢trueä¸falseç›¸åï¼‰
         {
             break;
         } else
             continue;
     }
 
-    system("cls");//Çå¿ÕÄÚÈİ
-    cout << "\tÍ¼Êé¹ÜÀíÏµÍ³\n";
-    cout << "ISBNºÅ\tÊéÃû\t×÷Õß\t³ö°æÉç\tÊ£ÓàÊıÁ¿\tµ¥¼Û\t½ø¼Û\tÈÕÆÚ\n";
-    for (int i = 0; i < tempNum; i++) //Êä³öÒÔ¼°³öÊÛÍêºóÊé¼®ĞÅÏ¢µÄ¸ü¸Ä
+    system("cls");//æ¸…ç©ºå†…å®¹
+    cout << "\tå›¾ä¹¦ç®¡ç†ç³»ç»Ÿ\n";
+    cout << "ISBNå·\tä¹¦å\tä½œè€…\tå‡ºç‰ˆç¤¾\tå‰©ä½™æ•°é‡\tå•ä»·\tè¿›ä»·\tæ—¥æœŸ\n";
+    for (int i = 0; i < tempNum; i++) //è¾“å‡ºä»¥åŠå‡ºå”®å®Œåä¹¦ç±ä¿¡æ¯çš„æ›´æ”¹
     {
-        priceSumPrice = priceSumPrice + DataBase[tempIndex[i]].qtyOnHand * DataBase[tempIndex[i]].BookBuyNum;//¼ÆËã×Ü¼Û
-        DataBase[tempIndex[i]].BookNum = DataBase[tempIndex[i]].BookNum - DataBase[tempIndex[i]].BookBuyNum;//¼ÆËãÂòºóÊ£ÓàÊéµÄÊıÄ¿
+        priceSumPrice = priceSumPrice + DataBase[tempIndex[i]].qtyOnHand * DataBase[tempIndex[i]].BookBuyNum;//è®¡ç®—æ€»ä»·
+        DataBase[tempIndex[i]].BookNum = DataBase[tempIndex[i]].BookNum - DataBase[tempIndex[i]].BookBuyNum;//è®¡ç®—ä¹°åå‰©ä½™ä¹¦çš„æ•°ç›®
         cout << DataBase[tempIndex[i]].BookISBN << "\t" << DataBase[tempIndex[i]].BookTitle << "\t"
              << DataBase[tempIndex[i]].BookAuther << "\t"
              << DataBase[tempIndex[i]].BookPub << "\t" << DataBase[tempIndex[i]].BookNum << "\t"
              << DataBase[tempIndex[i]].qtyOnHand << "\t"
-             << DataBase[tempIndex[i]].BookWholesale << "\t" << DataBase[tempIndex[i]].BookAddData[0] << "Äê"
-             << DataBase[tempIndex[i]].BookAddData[1] << "ÔÂ"
-             << DataBase[tempIndex[i]].BookAddData[2] << "ÈÕ\n";
+             << DataBase[tempIndex[i]].BookWholesale << "\t" << DataBase[tempIndex[i]].BookAddData[0] << "å¹´"
+             << DataBase[tempIndex[i]].BookAddData[1] << "æœˆ"
+             << DataBase[tempIndex[i]].BookAddData[2] << "æ—¥\n";
     }
     cout << "-------------------------------------\n";
-    printf("ÏúÊÛºÏ¼Æ£ºRMB %.2lf\n", priceSumPrice);//Êä³öÏà¹ØĞÅÏ¢
-    printf("ÁãÊÛË°£ºRMB %.2lf\n", priceSumPrice * 0.06);
-    printf("Ó¦¸¶½ğ¶î£ºRMB %.2lf\n\n", priceSumPrice * 1.06);
+    printf("é”€å”®åˆè®¡ï¼šRMB %.2lf\n", priceSumPrice);//è¾“å‡ºç›¸å…³ä¿¡æ¯
+    printf("é›¶å”®ç¨ï¼šRMB %.2lf\n", priceSumPrice * 0.06);
+    printf("åº”ä»˜é‡‘é¢ï¼šRMB %.2lf\n\n", priceSumPrice * 1.06);
     system("pause");
 
 }
 
-void bookstoreFixOne(int i)//ĞŞ¸ÄÎ»ÖÃÎªiµÄÊé¼®ĞÅÏ¢
+void bookstoreFixOne(int i)//ä¿®æ”¹ä½ç½®ä¸ºiçš„ä¹¦ç±ä¿¡æ¯
 {
     system("cls");
-    cout << "1.ÊéÃû\n2.×÷Õß\n3.³ö°æÉç\n4.Ê£ÓàÊıÁ¿\n5.µ¥¼Û\n6.½ø¼Û\n7.ÈÕÆÚ\n";
-    cout << "ÇëÊäÈëÒªĞŞ¸ÄµÄÄÚÈİ£º\n";
-    int tempNum = 0;//ÊäÈëÃüÁî
+    cout << "1.ä¹¦å\n2.ä½œè€…\n3.å‡ºç‰ˆç¤¾\n4.å‰©ä½™æ•°é‡\n5.å•ä»·\n6.è¿›ä»·\n7.æ—¥æœŸ\n";
+    cout << "è¯·è¾“å…¥è¦ä¿®æ”¹çš„å†…å®¹ï¼š\n";
+    int tempNum = 0;//è¾“å…¥å‘½ä»¤
     cin >> tempNum;
     switch (tempNum) {
         case 1:
-            DataBase[i].setTitle();//ÖØĞÂÉèÖÃÌâÄ¿
+            DataBase[i].setTitle();//é‡æ–°è®¾ç½®é¢˜ç›®
             return;
         case 2:
-            DataBase[i].setAuthor();//×÷Õß
+            DataBase[i].setAuthor();//ä½œè€…
             return;
         case 3:
-            DataBase[i].setPub();//³ö°æÉç
+            DataBase[i].setPub();//å‡ºç‰ˆç¤¾
             return;
         case 4:
-            DataBase[i].setQty();//ÊıÁ¿
+            DataBase[i].setQty();//æ•°é‡
             flashData();
             return;
         case 5:
-            DataBase[i].setretail();//µ¥¼Û
+            DataBase[i].setretail();//å•ä»·
             flashData();
             return;
         case 6:
-            DataBase[i].setWholesale();//½ø¼Û
+            DataBase[i].setWholesale();//è¿›ä»·
             flashData();
             return;
         case 7:
-            DataBase[i].setAddData();//ÖØĞÂÊäÈëÊı¾İ
-            flashData();//¸üĞÂÏà¹ØÁªµÄÊı¾İ
+            DataBase[i].setAddData();//é‡æ–°è¾“å…¥æ•°æ®
+            flashData();//æ›´æ–°ç›¸å…³è”çš„æ•°æ®
             return;
-        default://Ï¹¹»°ÉÊä
-            cout << "ÊäÈëÊı×ÖÎŞĞ§£¡ÇëÖØĞÂÊäÈë!\n";
+        default://çå¤Ÿå§è¾“
+            cout << "è¾“å…¥æ•°å­—æ— æ•ˆï¼è¯·é‡æ–°è¾“å…¥!\n";
             system("pause");
-            bookstoreFixOne(i);//ÔÙ¸øÎÒÊä
+            bookstoreFixOne(i);//å†ç»™æˆ‘è¾“
     }
 }
 
-void bookstoreFixContinue(int i)//ĞŞ¸Ä¶àÏîÊı¾İ
+void bookstoreFixContinue(int i)//ä¿®æ”¹å¤šé¡¹æ•°æ®
 {
     char tempChar;
     cin >> tempChar;
     if (tempChar == 'y') {
-        bookstoreFixOne(i);//·µ»Øµ½ÉÏÃæº¯ÊıĞŞ¸Ä
-        cout << "Äú»¹ÒªĞŞ¸ÄÆäËûÊı¾İÂğ£¿[y/n]\n";
-        bookstoreFixContinue(i);//ÔÙĞŞ¸Ä
+        bookstoreFixOne(i);//è¿”å›åˆ°ä¸Šé¢å‡½æ•°ä¿®æ”¹
+        cout << "æ‚¨è¿˜è¦ä¿®æ”¹å…¶ä»–æ•°æ®å—ï¼Ÿ[y/n]\n";
+        bookstoreFixContinue(i);//å†ä¿®æ”¹
         return;
     } else if (tempChar == 'n') {
         return;
     } else {
-        cout << "ÄúÊäÈëÁË´íÎóµÄ×Ö·û£¡\nÇëÖØĞÂÊäÈëy(yes)»òÕßn(no):\n";
-        bookstoreFixContinue(i);//Ï¹¹»°ÉÊä
+        cout << "æ‚¨è¾“å…¥äº†é”™è¯¯çš„å­—ç¬¦ï¼\nè¯·é‡æ–°è¾“å…¥y(yes)æˆ–è€…n(no):\n";
+        bookstoreFixContinue(i);//çå¤Ÿå§è¾“
         return;
     }
 }
 
-void bookstoreFixData() //Ö÷²Ëµ¥Ìø×ªĞŞ¸ÄÊı¾İµÄº¯Êı
+void bookstoreFixData() //ä¸»èœå•è·³è½¬ä¿®æ”¹æ•°æ®çš„å‡½æ•°
 {
-    cout << "ÇëÊäÈëÒª¸ÄÊéÄ¿µÄISBNºÅ£º\n";
+    cout << "è¯·è¾“å…¥è¦æ”¹ä¹¦ç›®çš„ISBNå·ï¼š\n";
     int tempNumber;
-    cin >> tempNumber;//ÏÈÈ·¶¨ÊÇÄÄ¸ö
+    cin >> tempNumber;//å…ˆç¡®å®šæ˜¯å“ªä¸ª
 
-    for (int i = 0; i < BookAllNum; i++) //ÕÒÊé
+    for (int i = 0; i < BookAllNum; i++) //æ‰¾ä¹¦
     {
         if (DataBase[i].BookISBN == tempNumber) {
             bookstoreFixOne(i);
-            cout << "Äú»¹ÒªĞŞ¸ÄÆäËûÊı¾İÂğ£¿[y/n]\n";
+            cout << "æ‚¨è¿˜è¦ä¿®æ”¹å…¶ä»–æ•°æ®å—ï¼Ÿ[y/n]\n";
             bookstoreFixContinue(i);
             return;
         }
     }
 
-    cout << "Î´ÕÒµ½Ä¿±êÊé¼®£¡\nÄúÊÇ·ñ»¹Òª¼ÌĞø²éÕÒ£¿[y/n]";
+    cout << "æœªæ‰¾åˆ°ç›®æ ‡ä¹¦ç±ï¼\næ‚¨æ˜¯å¦è¿˜è¦ç»§ç»­æŸ¥æ‰¾ï¼Ÿ[y/n]";
     char tempcontinue;
     cin >> tempcontinue;
     if (tempcontinue == 'y') {
@@ -260,104 +260,104 @@ void bookstoreFixData() //Ö÷²Ëµ¥Ìø×ªĞŞ¸ÄÊı¾İµÄº¯Êı
 
 }
 
-void bookstoreDelete() //É¾³ıÍ¼Êé
+void bookstoreDelete() //åˆ é™¤å›¾ä¹¦
 {
     int BookIndex = -1;
-    cout << "ÇëÊäÈëÉ¾³ıÊé¼®Ãû³Æ£º\n";
-    BookIndex = lookUpBook();//¸ù¾İÃû×ÖÕÒÊé
-    if (BookIndex == -1) //Ã»ÕÒµ½
+    cout << "è¯·è¾“å…¥åˆ é™¤ä¹¦ç±åç§°ï¼š\n";
+    BookIndex = lookUpBook();//æ ¹æ®åå­—æ‰¾ä¹¦
+    if (BookIndex == -1) //æ²¡æ‰¾åˆ°
     {
-        cout << "Î´ÕÒµ½Ïà¹ØÊé¼®£¬Äú»¹Òª¼ÌĞøÉ¾³ıÂğ£¿[y/n]\n";
+        cout << "æœªæ‰¾åˆ°ç›¸å…³ä¹¦ç±ï¼Œæ‚¨è¿˜è¦ç»§ç»­åˆ é™¤å—ï¼Ÿ[y/n]\n";
         char tempcontinue;
         cin >> tempcontinue;
-        if (tempcontinue == 'y') //ÔÙ¼ÌĞøÉ¾
+        if (tempcontinue == 'y') //å†ç»§ç»­åˆ 
         {
             bookstoreDelete();
             return;
         } else return;
-    } else //ÕÒµ½ÁË
+    } else //æ‰¾åˆ°äº†
     {
-        if (BookIndex == BookAllNum - 1) //ÊéµÄ´¢´æ×î´óÊı¼õÒ»
+        if (BookIndex == BookAllNum - 1) //ä¹¦çš„å‚¨å­˜æœ€å¤§æ•°å‡ä¸€
         {
             BookAllNum--;
         }
-        DataBase[BookIndex].BookISBN = '\0';//°ÉISBNÉèÎª0
-        cout << "É¾³ı³É¹¦£¡£¡£¡\n";
+        DataBase[BookIndex].BookISBN = '\0';//å§ISBNè®¾ä¸º0
+        cout << "åˆ é™¤æˆåŠŸï¼ï¼ï¼\n";
         system("pause");
     }
 }
 
-void bookInputISBN(int i) //ÊäÈëISBNºÅ
+void bookInputISBN(int i) //è¾“å…¥ISBNå·
 {
     BookData temp;
-    temp.setISBN();//ÁÙÊ±´¢´æ£¬¿´ÓĞÃ»ÓĞÖØ¸´
+    temp.setISBN();//ä¸´æ—¶å‚¨å­˜ï¼Œçœ‹æœ‰æ²¡æœ‰é‡å¤
     int tempNum = lookUpBookByISBN(temp.BookISBN);
-    if (tempNum == -1) //Ã»ÓĞÖØ¸´
+    if (tempNum == -1) //æ²¡æœ‰é‡å¤
     {
         DataBase[i].BookISBN = temp.BookISBN;
         return;
     } else {
-        cout << "¸ÃISBNÒÑ±»Ê¹ÓÃ£¡\n";
-        cout << "ÇëÖØĞÂÊäÈë£º\n";
-        bookInputISBN(i);//ÔÙ´ÎÊäÈë
+        cout << "è¯¥ISBNå·²è¢«ä½¿ç”¨ï¼\n";
+        cout << "è¯·é‡æ–°è¾“å…¥ï¼š\n";
+        bookInputISBN(i);//å†æ¬¡è¾“å…¥
     }
 
 
 }
 
-void bookstore_menu() //Í¼Êé¹ÜÀíÄ£¿éº¯Êı
+void bookstore_menu() //å›¾ä¹¦ç®¡ç†æ¨¡å—å‡½æ•°
 {
-    cout << "\tÊé¿â¹ÜÀíÄ£¿é\n\n";
-    cout << "1.²éÕÒÄ³±¾ÊéµÄĞÅÏ¢\n";
-    cout << "2.Ôö¼ÓÊé\n";
-    cout << "3.ĞŞ¸ÄÊéµÄĞÅÏ¢\n";
-    cout << "4.É¾³ıÊé\n";
-    cout << "5.·µ»Øµ½Ö÷²Ëµ¥\n\n";
-    cout << "ÊäÈëÑ¡Ôñ\n";
-    int key_num = 0;//ÊäÈëÊı×Ö´¢´æ
+    cout << "\tä¹¦åº“ç®¡ç†æ¨¡å—\n\n";
+    cout << "1.æŸ¥æ‰¾æŸæœ¬ä¹¦çš„ä¿¡æ¯\n";
+    cout << "2.å¢åŠ ä¹¦\n";
+    cout << "3.ä¿®æ”¹ä¹¦çš„ä¿¡æ¯\n";
+    cout << "4.åˆ é™¤ä¹¦\n";
+    cout << "5.è¿”å›åˆ°ä¸»èœå•\n\n";
+    cout << "è¾“å…¥é€‰æ‹©\n";
+    int key_num = 0;//è¾“å…¥æ•°å­—å‚¨å­˜
     cin >> key_num;
-    //switchÓï¾ä»á³öBUG
-    if (key_num == 1) //²éÕÒÍ¼ÊéĞÅÏ¢
+    //switchè¯­å¥ä¼šå‡ºBUG
+    if (key_num == 1) //æŸ¥æ‰¾å›¾ä¹¦ä¿¡æ¯
     {
-        bookstoreSeachBook();//Ìø×ªº¯Êı
+        bookstoreSeachBook();//è·³è½¬å‡½æ•°
         system("pause");
         return;
-    } else if (key_num == 2) //Ôö¼ÓÊé
+    } else if (key_num == 2) //å¢åŠ ä¹¦
     {
         int i = 0;
         for (; DataBase[i].BookISBN != '\0'; i++) {
 
-        }//ÕÒµ½×î½üÒ»¸ö\0µÄ´¢´æµ¥Î»
+        }//æ‰¾åˆ°æœ€è¿‘ä¸€ä¸ª\0çš„å‚¨å­˜å•ä½
         bookInputISBN(i);
         DataBase[i].input();
         if (i == BookAllNum) {
             BookAllNum++;
         }
-        cout << "ÊäÈë³É¹¦£¡\n";
+        cout << "è¾“å…¥æˆåŠŸï¼\n";
         system("pause");
 
-    } else if (key_num == 3) //ĞŞ¸ÄÊôµÄĞÅÏ¢
+    } else if (key_num == 3) //ä¿®æ”¹å±çš„ä¿¡æ¯
     {
         bookstoreFixData();
-    } else if (key_num == 4) //É¾³ıÊé
+    } else if (key_num == 4) //åˆ é™¤ä¹¦
     {
         bookstoreDelete();
-    } else if (key_num == 5) //·µ»Øµ½Ö÷²Ëµ¥
+    } else if (key_num == 5) //è¿”å›åˆ°ä¸»èœå•
     {
         return;
-    } else //´¦ÀíÒì³£Çé¿ö
+    } else //å¤„ç†å¼‚å¸¸æƒ…å†µ
     {
-        cout << "ERROR!!!\nÇëÖØĞÂÊäÈë£¡";
+        cout << "ERROR!!!\nè¯·é‡æ–°è¾“å…¥ï¼";
         system("pause");
         system("cls");
-        bookstore_menu();//Ï¹¹»°ÉÊä
+        bookstore_menu();//çå¤Ÿå§è¾“
     }
 
 }
 
-void bubbleSortListByQtyOnHandUp() //°´¼Û¸ñ½øĞĞÃ°ÅİÅÅĞò£¨ÉıĞò£©
+void bubbleSortListByQtyOnHandUp() //æŒ‰ä»·æ ¼è¿›è¡Œå†’æ³¡æ’åºï¼ˆå‡åºï¼‰
 {
-    for (int i = 0; i < BookAllNum; i++) //¾Í¼òµ¥µÄÃ°ÅİÅÅĞò
+    for (int i = 0; i < BookAllNum; i++) //å°±ç®€å•çš„å†’æ³¡æ’åº
     {
         for (int j = 0; j < BookAllNum - i - 1; j++) {
             if (DataBase[j].qtyOnHand > DataBase[j + 1].qtyOnHand) {
@@ -369,7 +369,7 @@ void bubbleSortListByQtyOnHandUp() //°´¼Û¸ñ½øĞĞÃ°ÅİÅÅĞò£¨ÉıĞò£©
     }
 }
 
-void bubbleSortListByQtyOnHandDown() //°´¼Û¸ñ½øĞĞÃ°ÅİÅÅĞò£¨½µĞò£©
+void bubbleSortListByQtyOnHandDown() //æŒ‰ä»·æ ¼è¿›è¡Œå†’æ³¡æ’åºï¼ˆé™åºï¼‰
 {
     for (int i = 0; i < BookAllNum; i++) {
         for (int j = 0; j < BookAllNum - i - 1; j++) {
@@ -382,7 +382,7 @@ void bubbleSortListByQtyOnHandDown() //°´¼Û¸ñ½øĞĞÃ°ÅİÅÅĞò£¨½µĞò£©
     }
 }
 
-void bubbleSortListByWholesaleUp() //°´½ø¼Û½øĞĞÃ°ÅİÅÅĞò£¨ÉıĞò£©
+void bubbleSortListByWholesaleUp() //æŒ‰è¿›ä»·è¿›è¡Œå†’æ³¡æ’åºï¼ˆå‡åºï¼‰
 {
     for (int i = 0; i < BookAllNum; i++) {
         for (int j = 0; j < BookAllNum - i - 1; j++) {
@@ -395,7 +395,7 @@ void bubbleSortListByWholesaleUp() //°´½ø¼Û½øĞĞÃ°ÅİÅÅĞò£¨ÉıĞò£©
     }
 }
 
-void bubbleSortListByWholesaleDown() //°´½ø¼Û½øĞĞÃ°ÅİÅÅĞò£¨½µĞò£©
+void bubbleSortListByWholesaleDown() //æŒ‰è¿›ä»·è¿›è¡Œå†’æ³¡æ’åºï¼ˆé™åºï¼‰
 {
     for (int i = 0; i < BookAllNum; i++) {
         for (int j = 0; j < BookAllNum - i - 1; j++) {
@@ -408,7 +408,7 @@ void bubbleSortListByWholesaleDown() //°´½ø¼Û½øĞĞÃ°ÅİÅÅĞò£¨½µĞò£©
     }
 }
 
-void bubbleSortListByAddPriceUp() //°´×Ü¼ÛÖµ½øĞĞÃ°ÅİÅÅĞò£¨ÉıĞò£©
+void bubbleSortListByAddPriceUp() //æŒ‰æ€»ä»·å€¼è¿›è¡Œå†’æ³¡æ’åºï¼ˆå‡åºï¼‰
 {
     for (int i = 0; i < BookAllNum; i++) {
         for (int j = 0; j < BookAllNum - i - 1; j++) {
@@ -421,7 +421,7 @@ void bubbleSortListByAddPriceUp() //°´×Ü¼ÛÖµ½øĞĞÃ°ÅİÅÅĞò£¨ÉıĞò£©
     }
 }
 
-void bubbleSortListByAddPriceDown() //°´×Ü¼ÛÖµ½øĞĞÃ°ÅİÅÅĞò£¨½µĞò£©
+void bubbleSortListByAddPriceDown() //æŒ‰æ€»ä»·å€¼è¿›è¡Œå†’æ³¡æ’åºï¼ˆé™åºï¼‰
 {
     for (int i = 0; i < BookAllNum; i++) {
         for (int j = 0; j < BookAllNum - i - 1; j++) {
@@ -434,7 +434,7 @@ void bubbleSortListByAddPriceDown() //°´×Ü¼ÛÖµ½øĞĞÃ°ÅİÅÅĞò£¨½µĞò£©
     }
 }
 
-void bubbleSortListByAddDataNumUp() //°´ÈÕÆÚ½øĞĞÃ°ÅİÅÅĞò£¨ÉıĞò£©
+void bubbleSortListByAddDataNumUp() //æŒ‰æ—¥æœŸè¿›è¡Œå†’æ³¡æ’åºï¼ˆå‡åºï¼‰
 {
     for (int i = 0; i < BookAllNum; i++) {
         for (int j = 0; j < BookAllNum - i - 1; j++) {
@@ -447,7 +447,7 @@ void bubbleSortListByAddDataNumUp() //°´ÈÕÆÚ½øĞĞÃ°ÅİÅÅĞò£¨ÉıĞò£©
     }
 }
 
-void bubbleSortListByAddDataNumDown() //°´ÈÕÆÚ½øĞĞÃ°ÅİÅÅĞò£¨½µĞò£©
+void bubbleSortListByAddDataNumDown() //æŒ‰æ—¥æœŸè¿›è¡Œå†’æ³¡æ’åºï¼ˆé™åºï¼‰
 {
     for (int i = 0; i < BookAllNum; i++) {
         for (int j = 0; j < BookAllNum - i - 1; j++) {
@@ -461,9 +461,9 @@ void bubbleSortListByAddDataNumDown() //°´ÈÕÆÚ½øĞĞÃ°ÅİÅÅĞò£¨½µĞò£©
 }
 
 
-bool UpOrDownMenu() //Ñ¯ÎÊÊÇÉıĞò»¹ÊÇ½µĞò
+bool UpOrDownMenu() //è¯¢é—®æ˜¯å‡åºè¿˜æ˜¯é™åº
 {
-    cout << "ÉıĞòÅÅÁĞ»¹ÊÇ½µĞòÅÅÁĞ£¿[u/d]\n";
+    cout << "å‡åºæ’åˆ—è¿˜æ˜¯é™åºæ’åˆ—ï¼Ÿ[u/d]\n";
     char tempdatachar;
     cin >> tempdatachar;
     if (tempdatachar == 'u')
@@ -471,21 +471,21 @@ bool UpOrDownMenu() //Ñ¯ÎÊÊÇÉıĞò»¹ÊÇ½µĞò
     else if (tempdatachar == 'd')
         return false;
     else {
-        cout << "Ö»ÄÜÊäÈëU£¨ÉıĞò£©»òÕßD£¨½µĞò£©\n";
-        return UpOrDownMenu();//´¦ÀíÏ¹ÊäµÄÇé¿ö
+        cout << "åªèƒ½è¾“å…¥Uï¼ˆå‡åºï¼‰æˆ–è€…Dï¼ˆé™åºï¼‰\n";
+        return UpOrDownMenu();//å¤„ç†çè¾“çš„æƒ…å†µ
     }
 }
 
-void Sortmenu() //ÅÅĞòµÄ·ÖÒ³Ãæ
+void Sortmenu() //æ’åºçš„åˆ†é¡µé¢
 {
-    cout << "°´Ê²Ã´½øĞĞÅÅĞò£¿\n";
-    cout << "1.Í¼Êéµ¥¼Û\n";
-    cout << "2.Í¼Êé½ø¼Û\n";
-    cout << "3.Í¼Êé×Ü¼Û\n";
-    cout << "4.Í¼Êé½ø»õÈÕÆÚ\n";
-    cout << "5.·µ»ØÉÏ¼¶Ò³Ãæ\n";
+    cout << "æŒ‰ä»€ä¹ˆè¿›è¡Œæ’åºï¼Ÿ\n";
+    cout << "1.å›¾ä¹¦å•ä»·\n";
+    cout << "2.å›¾ä¹¦è¿›ä»·\n";
+    cout << "3.å›¾ä¹¦æ€»ä»·\n";
+    cout << "4.å›¾ä¹¦è¿›è´§æ—¥æœŸ\n";
+    cout << "5.è¿”å›ä¸Šçº§é¡µé¢\n";
     int key_num = 0;
-    cin >> key_num;//²Ù×÷ÊÇÊ²Ã´ÅÅĞò
+    cin >> key_num;//æ“ä½œæ˜¯ä»€ä¹ˆæ’åº
 
     switch (key_num) {
         case 1:
@@ -525,7 +525,7 @@ void Sortmenu() //ÅÅĞòµÄ·ÖÒ³Ãæ
             report_menu();
             return;
         default:
-            cout << "ÇëÊäÈëÊı×Ö1~5!\n";
+            cout << "è¯·è¾“å…¥æ•°å­—1~5!\n";
             system("pause");
             system("cls");
             Sortmenu();
@@ -534,17 +534,17 @@ void Sortmenu() //ÅÅĞòµÄ·ÖÒ³Ãæ
 
 }
 
-void report_menu() //±¨±íÄ£¿éº¯Êı
+void report_menu() //æŠ¥è¡¨æ¨¡å—å‡½æ•°
 {
-    cout << "\tÍ¼Êé¹ÜÀíÏµÍ³\n";
-    cout << "\t  ±¨±íÄ£¿é\n";
-    cout << "1.Êé¿âÁĞ±í\n";
-    cout << "2.ÁãÊÛ¼ÛÁĞ±í\n";
-    cout << "3.ÅÅĞòÁĞ±í\n";
-    cout << "4.·µ»Øµ½Ö÷²Ëµ¥\n\n";
-    int key_num = 0;//ÊäÈëÊı×Ö´¢´æ
+    cout << "\tå›¾ä¹¦ç®¡ç†ç³»ç»Ÿ\n";
+    cout << "\t  æŠ¥è¡¨æ¨¡å—\n";
+    cout << "1.ä¹¦åº“åˆ—è¡¨\n";
+    cout << "2.é›¶å”®ä»·åˆ—è¡¨\n";
+    cout << "3.æ’åºåˆ—è¡¨\n";
+    cout << "4.è¿”å›åˆ°ä¸»èœå•\n\n";
+    int key_num = 0;//è¾“å…¥æ•°å­—å‚¨å­˜
     cin >> key_num;
-    //switchÃ²ËÆÓÅµãBUG
+    //switchè²Œä¼¼ä¼˜ç‚¹BUG
     if (key_num == 1) {
         system("cls");
         printData();
@@ -552,12 +552,12 @@ void report_menu() //±¨±íÄ£¿éº¯Êı
         return;
     } else if (key_num == 2) {
         system("cls");
-        cout << "\tÍ¼Êé¹ÜÀíÏµÍ³\n";
-        cout << "ISBNºÅ\tÊéÃû\tÊ£ÓàÊıÁ¿\tµ¥¼Û\t½ø¼Û\n";
+        cout << "\tå›¾ä¹¦ç®¡ç†ç³»ç»Ÿ\n";
+        cout << "ISBNå·\t\tä¹¦å\t\tå‰©ä½™æ•°é‡\tå•ä»·\tè¿›ä»·\n";
         for (int i = 0; i < 100; i++) {
-            if (DataBase[i].BookISBN != '\0') //Êä³öĞÅÏ¢
+            if (DataBase[i].BookISBN != '\0') //è¾“å‡ºä¿¡æ¯
             {
-                cout << DataBase[i].BookISBN << "\t" << DataBase[i].BookTitle << "\t" << DataBase[i].BookNum << "\t"
+                cout << DataBase[i].BookISBN << "\t" << DataBase[i].BookTitle << "\t\t" << DataBase[i].BookNum << "\t\t"
                      << DataBase[i].qtyOnHand << "\t"
                      << DataBase[i].BookWholesale << "\n";
             }
@@ -572,19 +572,19 @@ void report_menu() //±¨±íÄ£¿éº¯Êı
     } else if (key_num == 4) {
         return;
     } else {
-        cout << "ERROR!!!\nÇëÖØĞÂÊäÈë£¡";
+        cout << "ERROR!!!\nè¯·é‡æ–°è¾“å…¥ï¼";
         system("pause");
         system("cls");
-        report_menu();//ÖØĞÂÊäÈë
+        report_menu();//é‡æ–°è¾“å…¥
     }
 }
 
 
-void saveInfoToFile(const char *fileName)//Ğ´Èë
+void saveInfoToFile(const char *fileName)//å†™å…¥
 {
     FILE *fp = fopen(fileName, "w");
     int tempNumber = 0;
-    while (tempNumber < BookAllNum) //´¢´æÄÚÈİ
+    while (tempNumber < BookAllNum) //å‚¨å­˜å†…å®¹
     {
         fprintf(fp, "%d\t%s\t%s\t%s\t%d\t%.2lf\t%.2lf\t%d\t%d\t%d\n", DataBase[tempNumber].BookISBN,
                 DataBase[tempNumber].BookTitle,
@@ -594,27 +594,27 @@ void saveInfoToFile(const char *fileName)//Ğ´Èë
                 DataBase[tempNumber].BookAddData[1], DataBase[tempNumber].BookAddData[2]);
         tempNumber++;
     }
-    fclose(fp);//¹Ø±ÕÎÄ¼ş
+    fclose(fp);//å…³é—­æ–‡ä»¶
 }
 
-void readInfoFromFile(const char *fileName)//ÎÄ¼ş¶Á²Ù×÷
+void readInfoFromFile(const char *fileName)//æ–‡ä»¶è¯»æ“ä½œ
 {
     FILE *fp = fopen(fileName, "r");
-    if (fp == NULL) //Èç¹ûÃ»ÓĞµÄ»°´´½¨ÎÄ¼ş
+    if (fp == NULL) //å¦‚æœæ²¡æœ‰çš„è¯åˆ›å»ºæ–‡ä»¶
     {
         fp = fopen(fileName, "w+");
     }
-    int tempNumber = 0;//Â¼Èëµ½²»Í¬µÄ´¢´æÎ»ÖÃ
+    int tempNumber = 0;//å½•å…¥åˆ°ä¸åŒçš„å‚¨å­˜ä½ç½®
     while (fscanf(fp, "%d\t%s\t%s\t%s\t%d\t%lf\t%lf\t%d\t%d\t%d\n", &DataBase[tempNumber].BookISBN,
                   DataBase[tempNumber].BookTitle,
                   DataBase[tempNumber].BookAuther, DataBase[tempNumber].BookPub, &DataBase[tempNumber].BookNum,
                   &DataBase[tempNumber].qtyOnHand,
                   &DataBase[tempNumber].BookWholesale, &DataBase[tempNumber].BookAddData[0],
                   &DataBase[tempNumber].BookAddData[1], &DataBase[tempNumber].BookAddData[2]) !=
-           EOF) //¶ÁÎÄ¼ş²Ù×÷£¬¶ÁÈëÖ¸Õë
+           EOF) //è¯»æ–‡ä»¶æ“ä½œï¼Œè¯»å…¥æŒ‡é’ˆ
     {
         tempNumber++;
     }
-    BookAllNum = tempNumber;//Â¼Èë×ÜÊı
+    BookAllNum = tempNumber;//å½•å…¥æ€»æ•°
     fclose(fp);
 }

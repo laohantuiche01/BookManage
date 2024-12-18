@@ -4,9 +4,9 @@
 #include "BookData.h"
 #include "BookManageRun.h"
 
-void BookData::setISBN() //¶¨ÒåµÄÊ±ºòÉèÖÃISBNºÅ
+void BookData::setISBN() //å®šä¹‰çš„æ—¶å€™è®¾ç½®ISBNå·
 {
-    cout << "ÇëÊäÈëÊéµÄISBNºÅ£º\n";
+    cout << "è¯·è¾“å…¥ä¹¦çš„ISBNå·ï¼š\n";
     long long int tempNum;
     cin >> tempNum;
     long long int num=tempNum;
@@ -17,7 +17,7 @@ void BookData::setISBN() //¶¨ÒåµÄÊ±ºòÉèÖÃISBNºÅ
     }
     if(count>13)
     {
-        cout<<"ÊäÈëÎ»Êı³¬³öÏŞÖÆ£¡\n";
+        cout<<"è¾“å…¥ä½æ•°è¶…å‡ºé™åˆ¶ï¼\n";
         BookData::setISBN();
         return;
     }
@@ -27,54 +27,54 @@ void BookData::setISBN() //¶¨ÒåµÄÊ±ºòÉèÖÃISBNºÅ
     }
 }
 
-void BookData::setTitle() //ÉèÖÃÊéÃû
+void BookData::setTitle() //è®¾ç½®ä¹¦å
 {
-    cout << "ÇëÊäÈëÊéÃû£º\n";
+    cout << "è¯·è¾“å…¥ä¹¦åï¼š\n";
     cin >> BookTitle;
 }
 
-void BookData::setQty() //ÉèÖÃÊ£ÓàÊıÁ¿£¨Õâ¸öµ±Ê±Àí½â´íÁË£¬ºóÃæQTYÊÇµ¥¼Û£©
+void BookData::setQty() //è®¾ç½®å‰©ä½™æ•°é‡ï¼ˆè¿™ä¸ªå½“æ—¶ç†è§£é”™äº†ï¼Œåé¢QTYæ˜¯å•ä»·ï¼‰
 {
-    cout << "ÇëÊäÈëÊéµÄÊ£ÓàÊıÁ¿£º\n";
+    cout << "è¯·è¾“å…¥ä¹¦çš„å‰©ä½™æ•°é‡ï¼š\n";
     cin >> BookNum;
 }
 
-void BookData::setretail() //ÉèÖÃµ¥¼Û
+void BookData::setretail() //è®¾ç½®å•ä»·
 {
-    cout << "ÇëÊäÈëÊéµÄµ¥¼Û£º\n";
+    cout << "è¯·è¾“å…¥ä¹¦çš„å•ä»·ï¼š\n";
     cin >> qtyOnHand;
 }
 
-void BookData::setAuthor() //×÷Õß
+void BookData::setAuthor() //ä½œè€…
 {
-    cout << "ÇëÊäÈëÊéµÄ×÷Õß£º\n";
+    cout << "è¯·è¾“å…¥ä¹¦çš„ä½œè€…ï¼š\n";
     cin >> BookAuther;
 }
 
-void BookData::setPub() //³ö°æÉç
+void BookData::setPub() //å‡ºç‰ˆç¤¾
 {
-    cout << "ÇëÊäÈëÊéµÄ³ö°æÉç£º\n";
+    cout << "è¯·è¾“å…¥ä¹¦çš„å‡ºç‰ˆç¤¾ï¼š\n";
     cin >> BookPub;
 }
 
-void BookData::setAddData() //Ìí¼ÓÈÕÆÚ
+void BookData::setAddData() //æ·»åŠ æ—¥æœŸ
 {
-    cout << "ÇëÊäÈëÊéµÄ½ø»õÈÕÆÚ£º\nÄê£º";
+    cout << "è¯·è¾“å…¥ä¹¦çš„è¿›è´§æ—¥æœŸï¼š\nå¹´ï¼š";
     cin >> BookAddData[0];
-    cout << "ÔÂ£º";
+    cout << "æœˆï¼š";
     cin >> BookAddData[1];
-    cout << "ÈÕ£º";
+    cout << "æ—¥ï¼š";
     cin >> BookAddData[2];
 
 }
 
-void BookData::setWholesale() //ÉèÖÃ½ø¼Û
+void BookData::setWholesale() //è®¾ç½®è¿›ä»·
 {
-    cout << "ÇëÊäÈëÅú·¢¼Û£º\n";
+    cout << "è¯·è¾“å…¥æ‰¹å‘ä»·ï¼š\n";
     cin >> BookWholesale;
 }
 
-void BookData::input() //ÊäÈëµÄÕûºÏ
+void BookData::input() //è¾“å…¥çš„æ•´åˆ
 {
     setTitle();
     setQty();
@@ -85,27 +85,27 @@ void BookData::input() //ÊäÈëµÄÕûºÏ
     setAddData();
 }
 
-bool BookData::isEmpty(int memberNum) //0.oÕâ¸öÖ±½ÓÓÃµÚÒ»ĞĞÔªËØÊÇ·ñÊÇ0´úÌæÁË
+bool BookData::isEmpty(int memberNum) //0.oè¿™ä¸ªç›´æ¥ç”¨ç¬¬ä¸€è¡Œå…ƒç´ æ˜¯å¦æ˜¯0ä»£æ›¿äº†
 {
     if (DataBase[memberNum].BookISBN == '\0') {
         return false;
     } else return true;
 }
 
-int lookUpBook() //ÊäÈëÃû×ÖÕÒÊé
+int lookUpBook() //è¾“å…¥åå­—æ‰¾ä¹¦
 {
-    char memberTitle[20];//¶¨ÒåÒ»¸öÈİÆ÷
+    char memberTitle[20];//å®šä¹‰ä¸€ä¸ªå®¹å™¨
     cin >> memberTitle;
     for (int i = 0; i < BookAllNum; i++) {
-        if (!strcmp(DataBase[i].BookTitle, memberTitle)) //Á©ÏàÍ¬·µ»ØÖµÎª0£¬¼ÓÁË¸ö£¡
+        if (!strcmp(DataBase[i].BookTitle, memberTitle)) //ä¿©ç›¸åŒè¿”å›å€¼ä¸º0ï¼ŒåŠ äº†ä¸ªï¼
         {
-            return i;//·µ»Ø³ö
+            return i;//è¿”å›å‡º
         }
     }
     return -1;
 }
 
-int lookUpBookByISBN(int BookISBN) //Í¨¹ıISBNÕÒÊé
+int lookUpBookByISBN(int BookISBN) //é€šè¿‡ISBNæ‰¾ä¹¦
 {
     for (int i = 0; i < BookAllNum; i++) {
         if (BookISBN == DataBase[i].BookISBN) {
@@ -115,22 +115,22 @@ int lookUpBookByISBN(int BookISBN) //Í¨¹ıISBNÕÒÊé
     return -1;
 }
 
-void printData() //´òÓ¡³öÈ«²¿ĞÅÏ¢
+void printData() //æ‰“å°å‡ºå…¨éƒ¨ä¿¡æ¯
 {
-    cout << "\tÍ¼Êé¹ÜÀíÏµÍ³\n";
-    cout << "ISBNºÅ\tÊéÃû\t×÷Õß\t³ö°æÉç\tÊ£ÓàÊıÁ¿\tµ¥¼Û\t½ø¼Û\tÈÕÆÚ\n";
+    cout << "\tå›¾ä¹¦ç®¡ç†ç³»ç»Ÿ\n";
+    cout << "ISBNå·\t\tä¹¦å\t\tä½œè€…\tå‡ºç‰ˆç¤¾\t\tå‰©ä½™æ•°é‡\tå•ä»·\tè¿›ä»·\tæ—¥æœŸ\n";
     for (int i = 0; i < 100; i++) {
         if (DataBase[i].BookISBN != '\0') {
-            cout << DataBase[i].BookISBN << "\t" << DataBase[i].BookTitle << "\t" << DataBase[i].BookAuther << "\t"
-                 << DataBase[i].BookPub << "\t" << DataBase[i].BookNum << "\t" << DataBase[i].qtyOnHand << "\t"
-                 << DataBase[i].BookWholesale << "\t" << DataBase[i].BookAddData[0] << "Äê"
-                 << DataBase[i].BookAddData[1] << "ÔÂ"
-                 << DataBase[i].BookAddData[2] << "ÈÕ\n";
+            cout << DataBase[i].BookISBN << "\t" << DataBase[i].BookTitle << "\t\t" << DataBase[i].BookAuther << "\t"
+                 << DataBase[i].BookPub << "\t\t" << DataBase[i].BookNum << "\t\t" << DataBase[i].qtyOnHand << "\t"
+                 << DataBase[i].BookWholesale << "\t" << DataBase[i].BookAddData[0] << "å¹´"
+                 << DataBase[i].BookAddData[1] << "æœˆ"
+                 << DataBase[i].BookAddData[2] << "æ—¥\n";
         }
     }
 }
 
-void flashData() //¸üĞÂÀà³ÉÔ±µÄÊı¾İ
+void flashData() //æ›´æ–°ç±»æˆå‘˜çš„æ•°æ®
 {
     for (int i = 0; i < BookAllNum; i++) {
         DataBase[i].BookAddPrice = DataBase[i].BookWholesale * (double) DataBase[i].BookNum;
